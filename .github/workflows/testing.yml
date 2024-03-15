@@ -1,0 +1,22 @@
+name: Test | unit test for components 🧪
+on:
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: grant access to the repo
+        uses: actions/checkout@v4
+      - name: set up node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: enable pnpm package manager
+        run: corepack enable
+      - name: install packages
+        run: pnpm install
+      - name: run tests
+        run: pnpm test
