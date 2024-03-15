@@ -1,8 +1,6 @@
 name: Test | unit test for components 🧪
 on:
   pull_request:
-    branches:
-      - master
   workflow_dispatch:
 jobs:
   testing:
